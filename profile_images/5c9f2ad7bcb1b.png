@@ -1,0 +1,29 @@
+<html>
+<head>
+<script type="text/javascript">
+var timer=0;
+function startTimer()
+{
+	setInterval("timerUp()",1000);
+}
+
+function timerUp()
+{
+	timer++;
+        var resetat=180; //change this number to adjust the length of time in seconds
+	if(timer==resetat)
+	{
+		window.location.reload();
+	}
+	var tleft=resetat-timer;
+	document.getElementById('timer').innerHTML=tleft;
+}
+	
+</script>
+</head>
+<body onload="startTimer()">
+Seconds until page reloads:
+<div id="timer">
+</div>
+</body>
+</html>
